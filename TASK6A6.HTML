@@ -1,0 +1,16 @@
+def Repeat(x):
+	_size = len(x)
+	repeated = []
+	for i in range(_size):
+		k = i + 1
+		for j in range(k, _size):
+			if x[i] == x[j] and x[i] not in repeated:
+				repeated.append(x[i])
+				return repeated
+#Driver Code
+list1 = [10, 20, 30, 20, 20, 30, 40, 50, -20, 60, 60, -20, -20]
+list2=[10,20,20,-60,60,-20]
+list3=[10,20,-20,-10,10]
+print (Repeat(list1))
+print(Repeat(list2))
+print(Repeat(list3))

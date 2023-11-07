@@ -1,0 +1,50 @@
+def findMin(arr, low, high):
+
+    # If the array is not rotated
+
+    if arr[low] <= arr[high]:
+
+        return arr[low]
+ 
+
+    # Binary search
+
+    while low <= high:
+
+        mid = (low + high) // 2
+ 
+
+        # Check if mid is the minimum element
+
+        if arr[mid] < arr[mid-1]:
+
+            return arr[mid]
+
+        # If the left half is sorted, the minimum element must be in the right half
+
+        if arr[mid] > arr[high]:
+
+            low = mid + 1
+ 
+
+        # If the right half is sorted, the minimum element must be in the left half
+
+        else:
+
+            high = mid - 1
+ 
+
+    # If no minimum element is found, return None
+
+    return None
+# Driver program to test above functions
+
+if _name_ == '_main_':
+
+    arr = [5, 6, 1, 2, 3, 4]
+
+    N = len(arr)
+
+    print("The minimum element is " + \
+
+          str(findMin(arr, 0, N-1)
